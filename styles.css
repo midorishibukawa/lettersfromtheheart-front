@@ -65,7 +65,7 @@ label {
 .signup .form {
   background-color: #242530;
   width: 480px;
-  height: 560px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +80,7 @@ label {
   justify-content: space-between;
   gap: 12px;
   width: 420px;
-  height: 500px;
+  height: 550px;
 }
 
 .login .form {
@@ -150,4 +150,43 @@ a:hover,
 a:active {
   color: #00a8fc;
   text-decoration: underline;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 20%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
