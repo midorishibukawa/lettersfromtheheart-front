@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./src/styles/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <script src="main.js" defer></script>
@@ -11,7 +11,7 @@
 <body>
         <div class="signup">
             <div class="form">
-                <form class="container">
+                <form class="container" onsubmit="return false">
                     <h2>Create an account</h2>
                     <div class="inputbox">
                         <label for="username">Username</label>
@@ -22,14 +22,17 @@
                         <input type="email" id="email"></input>
                     </div>
                     <div class="inputbox">
-                        <label for="password">Password</label>
+                        <div class="tooltip">
+                            <label for="password" >Password</label>
+                            <span class="tooltiptext">The password must be at least 8 characters long with upper and lower case character, numbers, and symbols like @$!%*?&</span>
+                        </div>
                         <input type="password" id="password"></input>
                     </div>
                     <div class="inputbox">
-                        <label for="password-repeat">Confirm Password</label>
-                        <input type="password" id="password-repeat"></input>
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password"></input>
                     </div>
-                    <button class="button" id="submit">Sign Up</button>
+                    <button class="button" id="submit" onclick="checkForm()">Sign Up</button>
                     <a class="Login" href="index.html">Already have an account?</a>
                     <div class="terms">By registering, you agree to lettersfromtheheart's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</div>
                 </form>
