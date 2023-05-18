@@ -15,19 +15,31 @@ function checkIfExists(users, newUser) {
   );
 }
 
-function register(event) {
-  console.log(users);
-  event.preventDefault();
-  const username = document.querySelector("#username").value;
+// function register(event) {
+//   console.log(users);
+//   event.preventDefault();
+//   if (checkIfExists(users, newUser)) {
+//     alert("User already exists");
+//   } else {
+//     users.push(newUser);
+//     window.localStorage.setItem(LOCALSTORAGEKEY, JSON.stringify(users));
+//   }
+// }
+
+async function register(event){
+  event.preventDefault()
+  const user = document.querySelector("#username").value;
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-  const newUser = { username, email, password };
-  if (checkIfExists(users, newUser)) {
-    alert("User already exists");
-  } else {
-    users.push(newUser);
-    window.localStorage.setItem(LOCALSTORAGEKEY, JSON.stringify(users));
-  }
+  const newUser = { user, email, password };
+  const req = {
+    method: "POST",
+     body: JSON.stringify(newUser),
+      headers:{"Content-Type": "application/json"}
+    }
+  const res = await fetch("http://localhost:3000/sign-up", req)
+  const data = await res.json()
+  alert(data.msg)
 }
 
 function checkUsername() {
