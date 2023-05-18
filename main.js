@@ -41,3 +41,43 @@ async function register(event){
   const data = await res.json()
   alert(data.msg)
 }
+
+function checkUsername() {
+  let username = document.getElementById("username").value;
+  const validUsername = /^[\w\d]+$/;
+
+  if (!validUsername.test(username)) {
+    alert("The username must contain only letters, numbers and _ (underscores).");
+    return false;
+  }
+
+  return true;
+}
+
+function checkPassword() {
+  let password = document.getElementById("password").value;
+  let confirmPassword = document.getElementById("confirm-password").value;
+  const validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  if (password != confirmPassword) {
+    alert("The passwords do not match.");
+    return false;
+  }
+
+  if (!validPassword.test(password)) {
+    alert("The password must be at least 8 characters long, including at least one uppercase letter, one lowercase letter, one number and one special character (@$!%*?&).");
+    return false;
+  }
+  
+  return true;
+}
+
+
+function checkForm() {
+  if (checkPassword() && checkUsername()) {
+    alert("Registration successful!");
+    return true;
+  } else {
+    return false;
+  }
+}
