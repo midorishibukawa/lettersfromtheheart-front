@@ -32,7 +32,12 @@ async function register(event){
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
   const newUser = { user, email, password };
-  console.log(JSON.stringify(newUser))
-  const res = await fetch("http://localhost:3000/sign-up", {method: "POST", body: JSON.stringify(newUser)})
+  const req = {
+    method: "POST",
+     body: JSON.stringify(newUser),
+      headers:{"Content-Type": "application/json"}
+    }
+  const res = await fetch("http://localhost:3000/sign-up", req)
   const data = await res.json()
+  alert(data.msg)
 }
