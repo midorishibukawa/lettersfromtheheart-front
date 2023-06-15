@@ -12,5 +12,10 @@ async function login(event){
         }
     const res = await fetch("http://localhost:3000/sign-in", req)
     const data = await res.json()
-    alert(data.msg)
+    if(res.status !== 200){
+      alert(data.msg)
+      return
+    }
+      localStorage.setItem("user", email)
+      window.location.replace("/lettersfromtheheart-front/createLetter.html")
   }
