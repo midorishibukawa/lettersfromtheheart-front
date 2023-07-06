@@ -17,5 +17,5 @@ async function login(event){
       return
     }
       localStorage.setItem("user", email)
-      window.location.replace("/lettersfromtheheart-front/createLetter.html")
+      window.location.replace("/createLetter.html")
   }

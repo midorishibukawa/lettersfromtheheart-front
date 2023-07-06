@@ -1,0 +1,58 @@
+@import url(globalstyles.css);
+@import url(reset.css);
+
+html{
+    background-color: var(--grey-1);
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10rem;
+    min-width: 60vw;
+    
+}
+
+label {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+    color: var(--grey-5);
+    margin-bottom: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+textarea {
+    max-width: 60vw;
+    min-width: 30vw;
+    max-height: 40vh;
+    min-height: 20vh;
+    background-color: var(--grey-3);
+    
+}
+
+textarea:focus {
+    outline: 2px solid var(--grey-5);
+} 
+
+button {
+    width: 200px;
+    border-radius: 6px;
+    height: 50px;
+    border: none;
+    font-weight: 800;
+    background-color: var(--grey-3);
+    color: var(--grey-5);
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 8px 16px;
+}
+
+img {
+    margin-left: 8px;
+    margin-top: 8px;
+    height: 55px;
+    width: 55px;
+}
