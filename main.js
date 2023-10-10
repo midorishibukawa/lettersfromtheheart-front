@@ -75,7 +75,6 @@ function checkPassword() {
 
 function checkForm() {
   if (checkPassword() && checkUsername()) {
-    alert("Registration successful!");
     return true;
   } else {
     return false;
