@@ -1,12 +1,10 @@
-const space = document.querySelector(".space")
-
 const res = await fetch("http://localhost:3000/letter"+ location.search)
 const data = await res.json()
 
-const from = document.createElement("p")
-from.innerText = data.from
+const authorElement = document.querySelector("#author")
+const textElement = document.querySelector("#text")
 
-const text = document.createElement("p")
-text.innerText = data.text
+authorElement.innerText = data[0].from_user
+textElement.innerText = data[0].text
 
-space.append(from, text)
+console.log(data)
