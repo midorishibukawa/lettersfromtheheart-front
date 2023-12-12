@@ -1,17 +1,31 @@
-console.log("funciona1");
-
-async function getAllLetters() {
+const getAllLetters = async () => {
   try {
     const res = await fetch("http://localhost:3000/allLetters");
-    console.log("funciona3");
     const data = await res.json();
     console.log(data);
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
-}
+};
 
-getAllLetters();
+const allLetters = await getAllLetters();
 
-console.log("funciona2");
+const div = document.querySelector(".letter__wrapper");
+console.log(div);
+
+const render = (letters) => {
+  letters.map((letter) => {
+    const text__wrapper = document.createElement("div");
+    const text = document.createElement("p");
+
+    text__wrapper.classList.add("text__wrapper");
+
+    text.innerText = letter.text;
+
+    text__wrapper.appendChild(text);
+    div.appendChild(text__wrapper);
+  });
+};
+
+render(allLetters);

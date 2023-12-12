@@ -1,0 +1,16 @@
+@import url(globalstyles.css);
+@import url(reset.css);
+
+.letter__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.text__wrapper {
+  background-color: var(--grey-4);
+  border-radius: 20px;
+  padding: 20px;
+}
