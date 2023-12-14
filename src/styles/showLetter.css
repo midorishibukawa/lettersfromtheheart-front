@@ -3,9 +3,17 @@
 
 .showletter__section-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
   width: 60vw;
+}
+  
+.showletter__time {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-4);
+  color: var(--grey-5);
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
 }
 
 .showletter__title {
@@ -25,35 +33,45 @@
 }
 
 .showletter__text {
-  width: 60vw;
   font-size: var(--font-size-2);
-  font-weight: var(--font-weight-4);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: var(--font-weight-2);
+  color: var(--grey-5);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+   Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 section {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: 10rem;
-  min-width: 40vw;
+  justify-content: center;
+  width: 100vw;
+  height: 80vh;
+}
+
+content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50vw;
+  min-width: 30vw;
   gap: 20px;
-  align-self: center;
+
 }
 
 .showletter__section-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  width: 60vw;
+  justify-content: flex-start;
+  width: 50vw;
+  margin-bottom: 2vh;
 }
 
 .showletter__author {
   font-size: var(--font-size-3);
   font-weight: var(--font-weight-1);
   font-family: "Courier New", Courier, monospace;
+  color: var(--grey-5);
 }
 
 button {

@@ -7,9 +7,11 @@ if (!user) {
 
 submit.addEventListener("click", async ($event) => {
   $event.preventDefault();
+  const date = new Date();
   const letter = {
     from_user: user,
     text: textArea.value,
+    creation_date: date,
   };
   const req = {
     method: "POST",
