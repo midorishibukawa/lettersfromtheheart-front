@@ -1,12 +1,16 @@
-const space = document.querySelector(".space")
-
 const res = await fetch("http://localhost:3000/letter"+ location.search)
 const data = await res.json()
 
-const from = document.createElement("p")
-from.innerText = data.from
+const authorElement = document.querySelector("#author")
+const textElement = document.querySelector("#text")
+const dateElement = document.querySelector("#date")
 
-const text = document.createElement("p")
-text.innerText = data.text
+const creationDate = new Date(data[0].creation_date);
 
-space.append(from, text)
+const readableDate = `${creationDate.toLocaleDateString()} ${creationDate.toLocaleTimeString()}`;
+
+authorElement.innerText = data[0].from_user
+textElement.innerText = data[0].text
+dateElement.innerText = readableDate
+
+console.log(data)
