@@ -1,0 +1,53 @@
+@import url(globalstyles.css);
+@import url(reset.css);
+
+html {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--grey-2);
+  color: var(--grey-5);
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 70vh;
+}
+
+img {
+  margin-bottom: 20px;
+  height: 250px;
+  width: 250px;
+  align-self: flex-start;
+}
+
+h1 {
+  color: var(--grey-5);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-1);
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.button {
+  width: 200px;
+  border-radius: 6px;
+  height: 50px;
+  border: none;
+  font-weight: 800;
+  background-color: var(--grey-5);
+  color: var(--grey-1);
+  font-size: 14px;
+}
