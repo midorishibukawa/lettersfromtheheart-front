@@ -17,5 +17,5 @@ async function login(event) {
     return;
   }
   localStorage.setItem("user", data.user.id);
-  window.location.replace("createLetter.html");
+  window.location.replace("retrieveLetters.html");
 }
