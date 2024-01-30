@@ -6,6 +6,7 @@ html {
   background-color: var(--grey-2);
   color: var(--grey-5);
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -19,13 +20,14 @@ section {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 70vh;
+  min-height: 70vh;
+  margin: 20px;
 }
 
 img {
   margin-bottom: 20px;
-  height: 250px;
-  width: 250px;
+  max-height: 250px;
+  max-width: 100%;
   align-self: flex-start;
 }
 
