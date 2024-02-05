@@ -1,9 +1,13 @@
 @import url(globalstyles.css);
 @import url(reset.css);
 
-html{
+html {
     background-color: var(--grey-1);
     height: 100vh;
+}
+
+body {
+    height: auto;
 }
 
 form {
@@ -13,7 +17,7 @@ form {
     align-items: center;
     padding-top: 10rem;
     min-width: 60vw;
-    
+    text-align: center;
 }
 
 label {
@@ -25,20 +29,24 @@ label {
 }
 
 textarea {
-    max-width: 60vw;
-    min-width: 30vw;
-    max-height: 40vh;
-    min-height: 20vh;
     background-color: var(--grey-3);
-    
+    min-width: 90vw;
+    min-height: 30vh;
+
+    @media screen and (min-width: 800px) {
+        min-width: 40vw;
+        min-height: 25vh;
+    }
 }
 
-textarea:focus {
-    outline: 2px solid var(--grey-5);
-} 
+@media screen and (max-width: 800px), (max-height: 800px) {
+    form {
+        padding-top: 1rem;
+    }
+}
 
 button {
-    width: 200px;
+    min-width: 200px;
     border-radius: 6px;
     height: 50px;
     border: none;
@@ -55,4 +63,8 @@ img {
     margin-top: 8px;
     height: 55px;
     width: 55px;
+}
+
+textarea:focus {
+    outline: 2px solid var(--grey-5);
 }
